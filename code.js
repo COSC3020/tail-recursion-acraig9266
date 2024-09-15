@@ -21,6 +21,3 @@ function fibHelp(n, i, iMin1, iMin2) {
 		return fibHelp(n, i + 1, iMin1, iMin2);
 	}
 }
-
-
-console.log(fib(1000))
