@@ -23,7 +23,7 @@ markdown file.
 Best case: n = 0, 1, 2
 Average/Worst Case: n > 2
 
-Unless denoted otherwise, a line can be assumed to be O(1) and ignored
+Unless denoted otherwise, any line is O(1) and can be ignored
 
 function fib(n) {
 	if (n == 0) {                                        
@@ -45,8 +45,8 @@ function fibHelp(n, i, iMin1, iMin2) {
 		tmp = iMin1;                                  
 		iMin1 += iMin2;                               
 		iMin2 = tmp;                                  
-		return fibHelp(n, i + 1, iMin1, iMin2);       O(n), line is reached and run (n-i) + 1 times 
-	}
+		return fibHelp(n, i + 1, iMin1, iMin2);       O(n), line is reached and run (n - 2) times because the recursion breaks when i > n. i incremented every call, i begins at 3.
+  }
 }
 
 Complexity of Tail Recursive: $\Theta$(n)
