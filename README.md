@@ -19,9 +19,13 @@ non-tail-recursive version? Why, or why not, and what is the complexity
 (worst-case $\Theta$)? Add your answer, including your reasoning, to this
 markdown file.
 
+The complexity of tail-recursive fibonacci is the same as iterative dynamic fibonacci.
 
-Best case: n = 0, 1, 2
+Tail-Recursive
+Best case: n <= 2 means constant time
 Average/Worst Case: n > 2
+
+Complexity of Tail Recursive: $\Theta$(n)
 
 Unless denoted otherwise, any line is O(1) and can be ignored
 
@@ -45,8 +49,30 @@ function fibHelp(n, i, iMin1, iMin2) {
 		tmp = iMin1;                                  
 		iMin1 += iMin2;                               
 		iMin2 = tmp;                                  
-		return fibHelp(n, i + 1, iMin1, iMin2);       $\Theta$(n), line is reached and run (n - 2) times because the recursion breaks when i > n. i incremented every call, i begins at 3.
+		return fibHelp(n, i + 1, iMin1, iMin2);       $\Theta$ (n - 2) ∈ $\Theta$(n), line is reached and run (n - 2) times because the recursion breaks when i > n. i incremented every call, i begins at 3.
   }
 }
 
-Complexity of Tail Recursive: $\Theta$(n)
+Iterative Dynamic Solution
+Best Case: n <= 2, constant time
+Average/Worst Case: n > 2
+
+Complexity of Iterative Dynamic Fib: $\Theta$(?)
+
+Unless denoted otherwise, a line is O(1) and can be ignored.
+
+Code taken from Dynamic Programming -- Motivational Fibonacci Lecture Video
+
+function fib_dp(n) {
+	var fib_old = 1;
+ 	var fib = 1;
+  	var fib_new = 1;
+	while (n > 2) {			$\Theta$(n), the loop runs until n <= 2 which means it runs
+ 					for (n - 2) times since n is decremented by 1 each loop. $\Theta$(n - 2) ∈ $\Theta$(n).
+ 		fib_new = fib + fib_old;
+   		fib_old = fib;
+     		fib = fib_new;
+       		--n;
+	 }
+  return fib;
+ }
