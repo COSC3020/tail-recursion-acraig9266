@@ -45,7 +45,7 @@ function fibHelp(n, i, iMin1, iMin2) {
 		tmp = iMin1;                                  
 		iMin1 += iMin2;                               
 		iMin2 = tmp;                                  
-		return fibHelp(n, i + 1, iMin1, iMin2);       O(n), line is reached and run (n - 2) times because the recursion breaks when i > n. i incremented every call, i begins at 3.
+		return fibHelp(n, i + 1, iMin1, iMin2);       $\Theta$(n), line is reached and run (n - 2) times because the recursion breaks when i > n. i incremented every call, i begins at 3.
   }
 }
 
