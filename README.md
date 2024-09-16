@@ -18,3 +18,33 @@ Is the asymptotic complexity of tail-recursive Fibonacci different from the
 non-tail-recursive version? Why, or why not, and what is the complexity
 (worst-case $\Theta$)? Add your answer, including your reasoning, to this
 markdown file.
+
+
+Best case: n = 0, 1, 2
+Average/Worst Case: n > 2
+
+function fib(n) {
+	if (n == 0) {                                   O(1)
+		return 0;                                     O(1)
+	} else if (n == 1 || n == 2) {                  O(1)
+		return 1;                                     O(1)
+	} else {                      
+		i = 3;                                        O(1)
+		iMin1 = 1;                                    O(1)
+		iMin2 = 0;                                    O(1)
+		return fibHelp(n, i, iMin1, iMin2);           O(1) Line only ever executes once
+	}
+}
+
+function fibHelp(n, i, iMin1, iMin2) {
+	if (i > n) {                                    O(1)
+		return (iMin1 + iMin2);                       O(1)
+	} else {
+		tmp = iMin1;                                  O(1)
+		iMin1 += iMin2;                               O(1)
+		iMin2 = tmp;                                  O(1)
+		return fibHelp(n, i + 1, iMin1, iMin2);       O(n), line is reached and run (n-i) + 1 times 
+	}
+}
+
+Complexity of Tail Recursive: $\Theta$(n)
