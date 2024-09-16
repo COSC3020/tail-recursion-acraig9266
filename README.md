@@ -23,26 +23,28 @@ markdown file.
 Best case: n = 0, 1, 2
 Average/Worst Case: n > 2
 
+Unless denoted otherwise, a line can be assumed to be O(1) and ignored
+
 function fib(n) {
-	if (n == 0) {                                   O(1)
-		return 0;                                     O(1)
-	} else if (n == 1 || n == 2) {                  O(1)
-		return 1;                                     O(1)
+	if (n == 0) {                                        
+		return 0;                                    
+	} else if (n == 1 || n == 2) {                       
+		return 1;                                    
 	} else {                      
-		i = 3;                                        O(1)
-		iMin1 = 1;                                    O(1)
-		iMin2 = 0;                                    O(1)
-		return fibHelp(n, i, iMin1, iMin2);           O(1) Line only ever executes once
+		i = 3;                                       
+		iMin1 = 1;                                   
+		iMin2 = 0;                                   
+		return fibHelp(n, i, iMin1, iMin2);          // O(1) Line only ever executes once
 	}
 }
 
 function fibHelp(n, i, iMin1, iMin2) {
-	if (i > n) {                                    O(1)
-		return (iMin1 + iMin2);                       O(1)
+	if (i > n) {                                   	     
+		return (iMin1 + iMin2);                      
 	} else {
-		tmp = iMin1;                                  O(1)
-		iMin1 += iMin2;                               O(1)
-		iMin2 = tmp;                                  O(1)
+		tmp = iMin1;                                  
+		iMin1 += iMin2;                               
+		iMin2 = tmp;                                  
 		return fibHelp(n, i + 1, iMin1, iMin2);       O(n), line is reached and run (n-i) + 1 times 
 	}
 }
