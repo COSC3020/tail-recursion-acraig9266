@@ -1,3 +1,6 @@
+I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
+Iterative dynamic fibonacci solution used in analysis and in test file taken from Dynamic Programming -- Motivational Fibonacci Lecture Video in the syllabus, all other work is my own.
+
 # Tail Recursion
 
 In the lectures, we've seen code for a recursive implementation for computing
