@@ -57,7 +57,7 @@ Iterative Dynamic Solution
 Best Case: n <= 2, constant time
 Average/Worst Case: n > 2
 
-Complexity of Iterative Dynamic Fib: $\Theta$(?)
+Complexity of Iterative Dynamic Fib: $\Theta$(n)
 
 Unless denoted otherwise, a line is O(1) and can be ignored.
 
