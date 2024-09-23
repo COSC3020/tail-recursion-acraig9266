@@ -49,7 +49,7 @@ function fibHelp(n, i, iMin1, iMin2) {
 		tmp = iMin1;                                  
 		iMin1 += iMin2;                               
 		iMin2 = tmp;                                  
-		return fibHelp(n, i + 1, iMin1, iMin2);       Θ (n - 2) ∈ $\Theta$(n), line is reached and run (n - 2) times because the recursion breaks when i > n. i incremented every call, i begins at 3.
+		return fibHelp(n, i + 1, iMin1, iMin2);       Θ (n - 2) ∈ Θ(n), line is reached and run (n - 2) times because the recursion breaks when i > n. i incremented every call, i begins at 3.
   }
 }
 ```
@@ -67,7 +67,7 @@ function fib_dp(n) {
 	var fib_old = 1;
  	var fib = 1;
   	var fib_new = 1;
-	while (n > 2) {			$\Theta$(n), the loop runs until n <= 2 which means it runs
+	while (n > 2) {			Θ (n), the loop runs until n <= 2 which means it runs
  					for (n - 2) times since n is decremented by 1 each loop. $\Theta$(n - 2) ∈ $\Theta$(n).
  		fib_new = fib + fib_old;
    		fib_old = fib;
