@@ -1,3 +1,6 @@
+I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
+Iterative dynamic fibonacci solution used in analysis and in test file taken from Dynamic Programming -- Motivational Fibonacci Lecture Video in the syllabus, all other work is my own.
+
 # Tail Recursion
 
 In the lectures, we've seen code for a recursive implementation for computing
@@ -18,3 +21,62 @@ Is the asymptotic complexity of tail-recursive Fibonacci different from the
 non-tail-recursive version? Why, or why not, and what is the complexity
 (worst-case $\Theta$)? Add your answer, including your reasoning, to this
 markdown file.
+
+The complexity of tail-recursive fibonacci is the same as iterative dynamic fibonacci.
+
+Tail-Recursive
+Best case: n <= 2 means constant time
+Average/Worst Case: n > 2
+
+Complexity of Tail Recursive: $\Theta$(n)
+
+Unless denoted otherwise, any line is O(1) and can be ignored
+```javascript
+function fib(n) {
+	if (n == 0) {                                        
+		return 0;                                    
+	} else if (n == 1 || n == 2) {                       
+		return 1;                                    
+	} else {                      
+		i = 3;                                       
+		iMin1 = 1;                                   
+		iMin2 = 0;                                   
+		return fibHelp(n, i, iMin1, iMin2);          // O(1) Line only ever executes once
+	}
+}
+
+function fibHelp(n, i, iMin1, iMin2) {
+	if (i > n) {                                   	     
+		return (iMin1 + iMin2);                      
+	} else {
+		tmp = iMin1;                                  
+		iMin1 += iMin2;                               
+		iMin2 = tmp;                                  
+		return fibHelp(n, i + 1, iMin1, iMin2);       Θ (n - 2) ∈ Θ(n), line is reached and run (n - 2) times because the recursion breaks when i > n. i incremented every call, i begins at 3.
+  }
+}
+```
+Iterative Dynamic Solution
+Best Case: n <= 2, constant time
+Average/Worst Case: n > 2
+
+Complexity of Iterative Dynamic Fib: $\Theta$(n)
+
+Unless denoted otherwise, a line is O(1) and can be ignored.
+
+Code taken from Dynamic Programming -- Motivational Fibonacci Lecture Video
+```javascript
+function fib_dp(n) {
+	var fib_old = 1;
+ 	var fib = 1;
+  	var fib_new = 1;
+	while (n > 2) {			Θ (n), the loop runs until n <= 2 which means it runs
+ 					for (n - 2) times since n is decremented by 1 each loop. $\Theta$(n - 2) ∈ $\Theta$(n).
+ 		fib_new = fib + fib_old;
+   		fib_old = fib;
+     		fib = fib_new;
+       		--n;
+	 }
+  return fib;
+ }
+```
