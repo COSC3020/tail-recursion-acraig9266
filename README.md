@@ -28,7 +28,7 @@ Average/Worst Case: n > 2
 Complexity of Tail Recursive: $\Theta$(n)
 
 Unless denoted otherwise, any line is O(1) and can be ignored
-'''javascript
+```javascript
 function fib(n) {
 	if (n == 0) {                                        
 		return 0;                                    
@@ -52,7 +52,7 @@ function fibHelp(n, i, iMin1, iMin2) {
 		return fibHelp(n, i + 1, iMin1, iMin2);       $\Theta$ (n - 2) ∈ $\Theta$(n), line is reached and run (n - 2) times because the recursion breaks when i > n. i incremented every call, i begins at 3.
   }
 }
-'''
+```
 Iterative Dynamic Solution
 Best Case: n <= 2, constant time
 Average/Worst Case: n > 2
@@ -62,7 +62,7 @@ Complexity of Iterative Dynamic Fib: $\Theta$(?)
 Unless denoted otherwise, a line is O(1) and can be ignored.
 
 Code taken from Dynamic Programming -- Motivational Fibonacci Lecture Video
-'''javascript
+```javascript
 function fib_dp(n) {
 	var fib_old = 1;
  	var fib = 1;
@@ -76,4 +76,4 @@ function fib_dp(n) {
 	 }
   return fib;
  }
-'''
+```
