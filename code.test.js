@@ -7,8 +7,7 @@ function fibTest(n) {
   var fib_old = 1;
  	var fib = 1;
   	var fib_new = 1;
-	while (n > 2) {			Θ (n), the loop runs until n <= 2 which means it runs
- 					for (n - 2) times since n is decremented by 1 each loop. $\Theta$(n - 2) ∈ $\Theta$(n).
+	while (n > 2) {
  		fib_new = fib + fib_old;
    		fib_old = fib;
      		fib = fib_new;
